@@ -1,7 +1,7 @@
 import '../estilos/navBar.css'
 import React from 'react';
 import logo from '../assets/logo-nice.png'
-
+import Cart from './CartWidget'
 
 
 const navBar = ()=> {
@@ -28,6 +28,7 @@ const navBar = ()=> {
            <div className='log-el'>
                Register
            </div>
+           <Cart></Cart>
           </div>
       </div>  
     )

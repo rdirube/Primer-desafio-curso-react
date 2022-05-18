@@ -1,14 +1,14 @@
 import './App.css';
-import NavBar from './componentes/NavBar'
-
+import NavBar from './componentes/NavBar';
+import ItemListContainer from './componentes/itemListContainer'
 
 function App() {
   return (
     <div className="App">
       <NavBar></NavBar>
      <div>
-      <h1 className='App-header'>Autos para niños</h1>
       </div>
+     <ItemListContainer></ItemListContainer>
     </div>
   );
 }

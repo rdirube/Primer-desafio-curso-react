@@ -6,13 +6,27 @@
 
 .App-logo {
   height: 40vmin;
-  pointer-events: none;
+      -events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+
+
+.App-link {
+  color: #61dafb;
+}
+
+.login-register{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 30%;
+  flex-grow: 1;
 }
 
 .App-header {
@@ -28,18 +42,6 @@
   width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-.login-register{
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  width: 30%;
-  flex-grow: 1;
-}
-
 .log-el {
  display: flex;
  justify-content: center;
@@ -51,7 +53,7 @@
  width: 100px;
  border-radius: 10px;
  border: 1px solid black;
- cursor: pointer;
+ cursor:   pointer;
 }
 
 .log-el:hover {

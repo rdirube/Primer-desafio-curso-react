@@ -2,22 +2,27 @@ import './../App.css';
 import React , {useState} from 'react';
 
 
-const ItemCount = () => {
+const ItemCount = ({stock = 5}) => {
     //intente utlizar un classname pero me figuran las propiedades tachadas en la consola del servidor.
    //Perdon se que queda horrible asi
+   
+   const count = 1;
 
+   const [jeanCounter, counterState] = useState(count) 
 
-   const [jeanCounter, counterState] = useState(1) 
+   
 
-   const stock = 5;
+   const addCount = () => {
+    if(count < stock) {
+        setCount(count + 1)
+    }
+}
+    const removeCount = () => {
+    if(count > 1) {
+        setCount(count - 1)
+    }
+}
 
-   function onAdd(isPlus) {
-       const valueOfOp = isPlus ? 1 : -1;
-       const operationCondition = (isPlus && jeanCounter < stock) || (!isPlus && jeanCounter > 0);
-       if(operationCondition) {
-        counterState(jeanCounter + valueOfOp)
-       }
-   }
 
     return(
         <div style={{display:'flex',
@@ -34,9 +39,9 @@ const ItemCount = () => {
         }}>
             <p>Jean Skinny Fit</p>
             <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', width:'100%'}}>
-                <p onClick={()=> onAdd(false)} style={{cursor:'pointer', fontSize:'18px'}}>-</p>
+                <p onClick={()=> removeCount()} style={{cursor:'pointer', fontSize:'18px'}}>-</p>
                 <p>{jeanCounter}</p>
-                <p onClick={()=> onAdd(true)}  style={{cursor:'pointer', fontSize:'18px'}}>+</p>
+                <p onClick={()=> addCount()}  style={{cursor:'pointer', fontSize:'18px'}}>+</p>
             </div>
         </div>
     )

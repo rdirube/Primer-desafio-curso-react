@@ -1,6 +1,6 @@
-import jean from '../assets/jean.png'
-import tShirt from '../assets/t-shirt.png'  
-import socks from '../assets/socks.png'  
+import jean from '../assets/jean.jpeg'
+import tShirt from '../assets/t-shirt.jpg'  
+import socks from '../assets/socks.jpeg'  
 import { v4 as uuid } from 'uuid';
 import Item from './Item';
 

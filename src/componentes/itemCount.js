@@ -13,12 +13,12 @@ const ItemCount = ({stock}) => {
    
 
    const addCount = () => {
-    if(count < stock) {
+    if(jeanCounter < stock) {
         setCount(jeanCounter + 1)
     }
 }
     const removeCount = () => {
-    if(count > 1) {
+    if(jeanCounter > 1) {
         setCount(jeanCounter - 1)
     }
 }

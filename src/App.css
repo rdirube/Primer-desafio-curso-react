@@ -2,11 +2,12 @@
   text-align: center;
   flex-direction: column;
   position: relative;
+
 }
 
 .App-logo {
   height: 40vmin;
-      -events: none;
+  -events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -21,7 +22,7 @@
   color: #61dafb;
 }
 
-.login-register{
+.login-register {
   display: flex;
   justify-content: end;
   align-items: center;
@@ -32,31 +33,31 @@
 
 
 .log-el {
- display: flex;
- justify-content: center;
- align-items: center;
- margin-right: 4vh;
- background-color: white;
- color: rgb(120,120,120);
- height: 40px;
- width: 100px;
- border-radius: 10px;
- border: 1px solid black;
- cursor:   pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 4vh;
+  background-color: white;
+  color: rgb(120, 120, 120);
+  height: 40px;
+  width: 100px;
+  border-radius: 10px;
+  border: 1px solid black;
+  cursor: pointer;
 }
 
 .log-el:hover {
   background-color: black;
-  color:white
+  color: white
 }
 
 .item-count-container {
-  display:'flex';
-  flex-direction:'column';
-  align-items:'center';
+  display: 'flex';
+  flex-direction: 'column';
+  align-items: 'center';
   justify-content: 'center';
-  background-color:'rgb(200,200,200)';
-  position:'absolute';
+  background-color: 'rgb(200,200,200)';
+  position: 'absolute';
   z-index: 50;
 }
 
@@ -64,7 +65,103 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+
+
+/* CSS */
+.button-9 {
+  appearance: button;
+  backface-visibility: hidden;
+  background-color: #405cf5;
+  border-radius: 6px;
+  border-width: 0;
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .1) 0 2px 5px 0, rgba(0, 0, 0, .07) 0 1px 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif;
+  font-size: 100%;
+  height: 44px;
+  line-height: 1.15;
+  margin: 12px 0 0;
+  outline: none;
+  overflow: hidden;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transform: translateZ(0);
+  transition: all .2s, box-shadow .08s ease-in;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 30vh;
+}
+
+.button-9:disabled {
+  cursor: default;
+}
+
+.button-9:focus {
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+
+
+.item-container {
+  width: 40vh;
+  height: 60vh;
+  border: 1px solid #ADD8E6;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 5vh;
+  cursor: pointer;
+  color: white
+}
+
+.item-container:hover {
+  animation: hover-item 0.15s linear forwards;
+}
+
+@keyframes hover-item {
+  from {
+    scale:1
+  } to {
+    scale:1.05
+  }
+  from {
+    background-color: #1b1b1b;
+  } to {
+    background-color: #3a3a3a;
+  }
+}
+
+.item-list-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 5vh;
+  flex-wrap: wrap
+}
+
+
+.cart-widget {
+  margin: 0 4vh 0 2vh;
+  background-color: rgb(220,220,220);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 50%;
+  cursor: pointer
 }

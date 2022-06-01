@@ -1,34 +1,17 @@
-import jean from '../assets/jean.jpeg'
-import tShirt from '../assets/t-shirt.jpg'  
-import socks from '../assets/socks.jpeg'  
-import { v4 as uuid } from 'uuid';
+
 import Item from './Item';
 import { useEffect } from 'react';
+import {useParams} from 'react-router-dom'
+import '../App.css';
 
-const ItemList = () => {
-    
-    const items =[
-        {
-            id:uuid(),
-            title:'skinny jean',
-            description: 'tight jeans, long height',
-            price:150,
-            pictureUrl: jean
-        }, {
-            id:uuid(),
-            title:'t-shirt nomad',
-            description: 'long t shirt, colorless',
-            price:70,
-            pictureUrl:tShirt 
-        },
-        {
-            id:uuid(),
-            title:'socks',
-            description: 'white cool socks',
-            price:20,
-            pictureUrl:socks 
-        }
-    ];
+
+
+const ItemList = ({items}) => {
+   
+   
+   const {categoryId} = useParams();
+
+
 
     useEffect(() => {
     setTimeout(()=> {
@@ -38,20 +21,17 @@ const ItemList = () => {
         }).then(res => {
          console.log(randomItem)
         })
-
-        console.log(randomItem);
     },2000)
-     
     })
 
 
  
-
-    const itemsGenerator = items.map( (item) =>  <Item key = {item.id} item = {item}></Item>);
+    const itemByCategory = categoryId ? items.filter(item => item.categorie == categoryId) : items;
+    const itemsGenerator = itemByCategory.map( (item) =>  <Item key = {item.id} item = {item}></Item>);
 
     
     return  (
-      <div style={{width:'100%', height:'50vh', display:'flex', justifyContent:'space-evenly', marginTop:'5vh', flexWrap:'wrap'}}>
+      <div className='item-list-container'>
           {itemsGenerator}
     </div>
   )

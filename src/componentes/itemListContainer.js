@@ -1,11 +1,19 @@
 import '../estilos/navBar.css';
 import ItemList from './ItemList';
+import Items from '../items';
+import '../App.css';
+
 
 
 const ItemListContainer = () => {
+    
+
+    const items = Items;
+    
+
     return (
         <div className='App-header'>
-         <ItemList></ItemList>
+         <ItemList items = {items}></ItemList>
         </div>
     )
 }

@@ -1,15 +1,19 @@
-
+import {Link} from 'react-router-dom'
+import '../App.css';
 
 
 const Item = ({item}) => {
    
    return (
-       <div style={{width:'35vh', height:'60vh' , border: '1px solid #ADD8E6', borderRadius:'15px', display:'flex', flexDirection:'column' ,justifyContent:'space-evenly', alignItems:'center'}}>
-           <p style={{color:'black'}}>{item.title}</p>
+    <Link to={`/item/${item.id}`}>
+       <div className='item-container'>
+           {item.title}
            <img style={{width:'80%', height: '60%'}} src={item.pictureUrl}></img>
-           <p style={{color:'black'}}>{item.price}$</p>
+           <p>{item.price}.00 $</p>    
        </div>
+       </Link>
    ) 
+
 }
 
 

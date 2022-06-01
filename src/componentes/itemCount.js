@@ -19,31 +19,17 @@ const ItemCount = ({stock}) => {
 }
     const removeCount = () => {
     if(jeanCounter > 1) {
-        setCount(jeanCounter - 1)
+        setCount(jeanCounter - 1);
     }
 }
 
 
     return(
-        <div style={{display:'flex',
-        flexDirection:'column',
-        alignItems:'center',
-        justifyContent: 'center',
-        backgroundColor:'white',
-        position:'absolute',
-        zIndex: 50,
-        padding:'1vh 2.5vh',
-        borderRadius:'20px',
-        transform:'translateY(20px)',
-        border:'1px solid black'
-        }}>
-            <p>Jean Skinny Fit</p>
-            <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', width:'100%'}}>
-                <p onClick={()=> removeCount()} style={{cursor:'pointer', fontSize:'18px'}}>-</p>
+            <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', width:'70%', borderRadius:'50px', padding:'2vh', fontSize:'3vh', backgroundColor:'white', color:'black', height:'4.5vh'}}>
+                <p onClick={()=> removeCount()} style={{cursor:'pointer'}}>-</p>
                 <p>{jeanCounter}</p>
-                <p onClick={()=> addCount()}  style={{cursor:'pointer', fontSize:'18px'}}>+</p>
+                <p onClick={()=> addCount()}  style={{cursor:'pointer'}}>+</p>
             </div>
-        </div>
     )
 }
 

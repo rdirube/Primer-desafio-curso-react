@@ -165,3 +165,22 @@
   border-radius: 50%;
   cursor: pointer
 }
+
+
+.cart-list-container {
+  width: 50vh;
+  height: 11vh;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 2vh;
+}
+
+.cart-father-cont{
+  top: 11vh;
+  position: fixed;
+  z-index: 100;
+  right: 3vh;
+  border-radius: 5px;
+
+}

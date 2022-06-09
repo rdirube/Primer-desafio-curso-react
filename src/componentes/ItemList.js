@@ -19,7 +19,6 @@ const ItemList = ({items}) => {
         const  asynFunction =  new Promise((resolve, reject) => {
             resolve(true)
         }).then(res => {
-         console.log(randomItem)
         })
     },2000)
     })

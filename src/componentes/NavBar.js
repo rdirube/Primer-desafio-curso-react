@@ -1,11 +1,18 @@
 import '../estilos/navBar.css'
-import React from 'react';
+import React, {useState} from 'react';
 import logo from '../assets/logo-nice.png'
 import Cart from './CartWidget'
 import { Link } from 'react-router-dom';
 
 
-const navBar = ()=> {
+const NavBar = ()=> {
+
+   const [showCart, cartStateModify] = useState(false) ;
+   
+   function showCartToggle() {
+       cartStateModify(!showCart)
+   }
+
     return (
       <div className='navBar'>
           <div className='left-navbar'>
@@ -29,11 +36,15 @@ const navBar = ()=> {
            <div className='log-el'>
                Register
            </div>
-           <Cart></Cart>
+      {showCart && (<Cart></Cart>)}   
           </div>
+          <div onClick={()=> showCartToggle()} className='cart-widget'>
+        <i class="material-icons" >add_shopping_cart
+         </i>
+        </div>
       </div>  
     )
 }
 
 
-export default navBar;
+export default NavBar;

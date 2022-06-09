@@ -1,11 +1,22 @@
 
 import '../App.css';
 import ItemCount from './itemCount';
-
-
+import cart from '../App.js'
+import React from 'react';
+import { ThemeContext } from '@emotion/react';
+import { useContext, createContext } from 'react';
+import CartContext from './CartContext';
 
 
 const ItemDetail = ({item}) => {
+    
+    const {addProduct} = useContext(CartContext)
+    
+    
+  
+
+
+
     return(
         <div style={{display:'flex', padding:'4vh',  backgroundColor:'transparent',borderRadius:'10px', border:'1px solid white'}}>
         <img src={item.pictureUrl} style={{width:'55vh', height:'60vh'}}></img>
@@ -16,10 +27,10 @@ const ItemDetail = ({item}) => {
             </div>
             <p>{item.price}.00 $</p>
             <p style={{color:'greenyellow'}}>Disponibles: {item.stock}</p>
-            <ItemCount stock={item.stock}></ItemCount>
-            <button className='button-9'>Añadir al carrito</button>
+            <ItemCount item={item}></ItemCount>
+            <button className='button-9' onClick={()=> addProduct(item)}>Añadir al carrito</button>
         </div>
-       </div>
+       </div>   
     )
  
 }

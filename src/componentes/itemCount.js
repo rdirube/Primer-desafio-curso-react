@@ -2,7 +2,7 @@ import './../App.css';
 import React , {useState} from 'react';
 
 
-const ItemCount = ({stock}) => {
+const ItemCount = ({item}) => {
     //intente utlizar un classname pero me figuran las propiedades tachadas en la consola del servidor.
    //Perdon se que queda horrible asi
    
@@ -13,13 +13,15 @@ const ItemCount = ({stock}) => {
    
 
    const addCount = () => {
-    if(jeanCounter < stock) {
-        setCount(jeanCounter + 1)
+    if(jeanCounter < item.stock) {
+        setCount(jeanCounter + 1);
+        item.quantity++
     }
 }
     const removeCount = () => {
     if(jeanCounter > 1) {
         setCount(jeanCounter - 1);
+        item.quantity--
     }
 }
 

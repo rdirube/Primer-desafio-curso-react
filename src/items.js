@@ -17,7 +17,8 @@ const Items =[
         price:150,
         categorie:1,
         pictureUrl: jean,
-        stock:7
+        stock:7,
+        quantity:1
     }, {
         id:2,
         title:'T-shirt nomad',
@@ -25,7 +26,8 @@ const Items =[
         price:70,
         pictureUrl:tShirt,
         categorie:2,
-        stock:6
+        stock:6,
+        quantity:1
 
     },
     {
@@ -35,7 +37,8 @@ const Items =[
         price:20,
         pictureUrl:socks,
         categorie:3,
-        stock:11 
+        stock:11,
+        quantity:1
     },
     {
         id:4,
@@ -44,7 +47,8 @@ const Items =[
         price:170,
         pictureUrl: straightJean,
         categorie:1,
-        stock:8
+        stock:8,
+        quantity:1
     }, {
         id:5,
         title:'T-shirt fit',
@@ -52,7 +56,8 @@ const Items =[
         price:70,
         pictureUrl:brownShirt,
         categorie:2,
-        stock:3
+        stock:3,
+        quantity:1
 
     },
     {
@@ -62,7 +67,8 @@ const Items =[
         price:35,
         pictureUrl:greySocks,
         categorie:3,
-        stock:10
+        stock:10,
+        quantity:1
     },
     {
         id:7,
@@ -71,7 +77,8 @@ const Items =[
         price:165,
         categorie:1,
         pictureUrl: jeggins,
-        stock:4
+        stock:4,
+        quantity:1
     }, {
         id:8,
         title:'T-shirt V',
@@ -79,8 +86,8 @@ const Items =[
         price:75,
         pictureUrl:vShirt,
         categorie:2,
-        stock:9
-
+        stock:9,
+        quantity:1
     }
 ];
 

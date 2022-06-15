@@ -1,14 +1,15 @@
 import '../estilos/navBar.css'
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import logo from '../assets/logo-nice.png'
 import Cart from './CartWidget'
 import { Link } from 'react-router-dom';
-
+import CartContext from './CartContext';
 
 const NavBar = ()=> {
 
    const [showCart, cartStateModify] = useState(false) ;
-   
+   const {totalQuantity} = useContext(CartContext);
+ 
    function showCartToggle() {
        cartStateModify(!showCart)
    }
@@ -28,6 +29,9 @@ const NavBar = ()=> {
           <div className='navbar-element p'>
               <Link to="/category/3"> Medias</Link>
           </div>
+          <div className='navbar-element p'>
+              <Link to="/Cart"> Carrito</Link>
+          </div>
           </div>
           <div className='login-register'>
            <div className='log-el'>
@@ -41,6 +45,7 @@ const NavBar = ()=> {
           <div onClick={()=> showCartToggle()} className='cart-widget'>
         <i class="material-icons" >add_shopping_cart
          </i>
+         <span>{totalQuantity}</span>
         </div>
       </div>  
     )

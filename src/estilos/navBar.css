@@ -8,19 +8,9 @@
     align-items: center;
 }
 
-.cart-container {
-    margin: '0 4vh 0 2vh';
-    background-color: 'rgb(200,200,200)';
-    width: '48px';
-    height: '48px';
-    display: 'flex';
-    justify-content: 'center';
-    align-items: 'center';
-    border-radius: '50%';
-    cursor: 'pointer'
-}
+
 .navbar-element {
-    margin-left: 4vh;
+    margin-left: 8vh;
     font-size: 15px;
     flex-grow: 1;
     width: 100%;

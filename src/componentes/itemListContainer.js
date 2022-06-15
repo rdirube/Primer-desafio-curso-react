@@ -1,9 +1,6 @@
 import '../estilos/navBar.css';
 import ItemList from './ItemList';
 import Items from '../items';
-import '../App.css';
-
-
 
 const ItemListContainer = () => {
     

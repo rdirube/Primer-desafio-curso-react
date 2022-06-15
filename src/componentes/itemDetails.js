@@ -10,12 +10,9 @@ import CartContext from './CartContext';
 
 const ItemDetail = ({item}) => {
     
+    
     const {addProduct} = useContext(CartContext)
     
-    
-  
-
-
 
     return(
         <div style={{display:'flex', padding:'4vh',  backgroundColor:'transparent',borderRadius:'10px', border:'1px solid white'}}>

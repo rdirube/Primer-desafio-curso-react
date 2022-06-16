@@ -1,4 +1,6 @@
 import { createContext, useState, useEffect } from 'react'
+import { collection, getDocs } from 'firebase/firestore';
+import db from '../utils/firebaseConfig'
 
 
 
@@ -10,6 +12,29 @@ const CartProvider = ({ children }) => {
  const [cartListItems, setCartListItems] = useState([]);
  const [totalPrice, setPrice] = useState(0);
  const [totalQuantity, setQuantity] = useState(0);
+
+
+
+ useEffect(() => {
+    calculateTotal();
+    calculateTotalQuantity();
+    getProducts();
+   }, [cartListItems])
+
+
+
+
+ const getProducts = async () => {
+    const querySnapshot = await getDocs(collection(db, 'items'));
+    console.log(querySnapshot)
+
+     const itemList = querySnapshot.docs.map((doc) => {
+      return console.log(doc.data)
+     })
+     console.log(itemList)
+   }
+
+
 
 
     const addProduct = (product) => {
@@ -56,11 +81,7 @@ const CartProvider = ({ children }) => {
     } 
 
 
-    useEffect(() => {
-        calculateTotal();
-        calculateTotalQuantity()
-       }, [cartListItems])
-   
+    
 
 
     const data = {

@@ -9,8 +9,8 @@ import '../App.css';
 const ItemList = ({items}) => {
    
    
-   const {categoryId} = useParams();
-
+   const {id} = useParams();
+   
 
 
     useEffect(() => {
@@ -25,7 +25,7 @@ const ItemList = ({items}) => {
 
 
  
-    const itemByCategory = categoryId ? items.filter(item => item.categorie == categoryId) : items;
+    const itemByCategory = id ? items.filter(item => item.categorie == id) : items;
     const itemsGenerator = itemByCategory.map( (item) =>  <Item key = {item.id} item = {item}></Item>);
 
     

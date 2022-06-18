@@ -15,24 +15,52 @@ const CartProvider = ({ children }) => {
 
 
 
+ const [items, setItems] = useState([])
+
+
+
+ 
+
+   useEffect(() => {
+     getProducts();
+   }, [])
+
+
+
+ 
+ 
+  const getProducts = async () => {
+     const querySnapshot = await getDocs(collection(db, 'items'));
+     const itemArray = [];
+      const itemList = querySnapshot.docs.map((doc) => {
+       itemArray.push(doc.data())
+      }) 
+      setItems(itemArray);
+      console.log(items)
+
+    }
+
+ 
+
+
+
  useEffect(() => {
     calculateTotal();
     calculateTotalQuantity();
-    getProducts();
+
    }, [cartListItems])
 
 
 
 
- const getProducts = async () => {
-    const querySnapshot = await getDocs(collection(db, 'items'));
-    console.log(querySnapshot)
 
-     const itemList = querySnapshot.docs.map((doc) => {
-      return console.log(doc.data)
-     })
-     console.log(itemList)
-   }
+//  const getProducts = async () => {
+//     const querySnapshot = await getDocs(collection(db, 'items'));
+//      const itemList = querySnapshot.docs.map((doc) => {  
+//       setItems(items => [...items,doc.data()])
+//      })
+//      console.log(items)
+//    }
 
 
 
@@ -69,9 +97,7 @@ const CartProvider = ({ children }) => {
                 )
              }).reduce((acc, b) => acc + b);
              setQuantity(totalQuant)
-        }
-        console.log()
-     
+        }     
     }
 
 
@@ -90,7 +116,8 @@ const CartProvider = ({ children }) => {
         removeItem,
         calculateTotal,
         totalPrice,
-        totalQuantity
+        totalQuantity,
+        items
     }
 
 

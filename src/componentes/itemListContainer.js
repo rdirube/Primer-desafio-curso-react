@@ -1,12 +1,19 @@
 import '../estilos/navBar.css';
 import ItemList from './ItemList';
-import Items from '../items';
+import { useContext, createContext } from 'react';
+import CartContext from './CartContext';
+
 
 const ItemListContainer = () => {
     
 
-    const items = Items;
+    const {items} = useContext(CartContext)
+
+
     
+
+
+
 
     return (
         <div className='App-header'>

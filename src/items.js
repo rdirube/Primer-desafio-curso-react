@@ -73,7 +73,7 @@ const Items =[
     {
         id:7,
         title:'Jeggings jean',
-        description: 'Blue classic Jean',
+        description: 'Blue classic jean',
         price:165,
         categorie:1,
         pictureUrl: jeggins,

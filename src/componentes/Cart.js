@@ -11,16 +11,17 @@ import { Link } from 'react-router-dom';
 const CompleteCart = ({}) =>  {
 
     const { cartListItems } = useContext(CartContext)
-    const {calculateTotal} = useContext(CartContext)
     const { removeItem } = useContext(CartContext)
     const { totalPrice } = useContext(CartContext)
 
    
    
 
-   render(); { 
+   render(); 
+   { 
     
-    return cartListItems.length > 0 ? (
+    return (
+           cartListItems.length > 0 ? (
         <div style={{width:'100%', height:'100%'}}>
             <div className='cart-line'>
                 <span className='header-opt'>Producto</span>
@@ -54,7 +55,7 @@ const CompleteCart = ({}) =>  {
      <Link to="/"><button class="button-28" role="button">Volver al home</button></Link> 
 
     </div>) 
-    
+    )
     }
 
 

@@ -8,12 +8,14 @@ import { ThemeContext } from '@emotion/react';
 import CartContext, { CartProvider } from './componentes/CartContext';
 import CompleteCart from './componentes/Cart';
 
+
 // EL GIF ESTA DENTRO DE LA CARPETA ASSETS
 
 
 
 function App() {
-  
+
+ 
 
 
   
@@ -24,16 +26,14 @@ function App() {
       <NavBar></NavBar>  
       <Routes>   
       <Route path='/' element ={<ItemListContainer></ItemListContainer>}></Route>
-      <Route path='/category/:categoryId' element= {<ItemListContainer></ItemListContainer>}></Route>
+      <Route path='/category/:id' element= {<ItemListContainer></ItemListContainer>}></Route>
       <Route path='/item/:id' element= {<ItemDetailContainer></ItemDetailContainer>}></Route>
       <Route path='/cart' element= {<CompleteCart></CompleteCart>}></Route>
 
       </Routes>  
-     {/* <div style={{width:'100%', display:'flex', justifyContent:'center', alignItems:'start'}}>
-     <ItemCount stock = {stock}></ItemCount>
-    </div> */}
+
          </BrowserRouter>
-         </CartProvider>
+       </CartProvider>
     </div>
   );
 }

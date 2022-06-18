@@ -4,15 +4,14 @@ import ItemCount from './itemCount';
 import cart from '../App.js'
 import React from 'react';
 import { ThemeContext } from '@emotion/react';
-import { useContext, createContext } from 'react';
+import { useContext, createContext, useE } from 'react';
 import CartContext from './CartContext';
 
 
 const ItemDetail = ({item}) => {
     
-    
+
     const {addProduct} = useContext(CartContext)
-    
 
     return(
         <div style={{display:'flex', padding:'4vh',  backgroundColor:'transparent',borderRadius:'10px', border:'1px solid white'}}>

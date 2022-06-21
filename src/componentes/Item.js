@@ -3,12 +3,12 @@ import '../App.css';
 
 
 const Item = ({item}) => {
-   
+    console.log(item);
    return (
     <Link to={`/item/${item.id}`}>
        <div className='item-container'>
            {item.title}
-           <img style={{width:'80%', height: '60%'}} src={item.pictureUrl}></img>
+           <img style={{width:'80%', height: '60%'}} src= "./assets/straight-jean.jpeg"></img>
            <p>{item.price}.00 $</p>    
        </div>
        </Link>

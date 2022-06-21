@@ -14,13 +14,13 @@ const ItemDetailContainer = () => {
 
     const { id } = useParams();
 
-    // const { items } = useContext(CartContext)
+    const { items } = useContext(CartContext)
 
 
 
     return (<div className='App-header'>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', transform: 'translateY(7vh)', padding: '3vh' }}>
-            {/* <ItemDetail item = {items[id-1]}></ItemDetail> */}
+            <ItemDetail item = {items[id-1]}></ItemDetail> 
         </div>
     </div>
     )

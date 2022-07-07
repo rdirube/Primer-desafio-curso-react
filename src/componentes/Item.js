@@ -2,15 +2,14 @@ import {Link} from 'react-router-dom'
 import '../App.css';
 
 
-const Item = ({item}) => {
-    console.log(item);
+ const Item = ({item}) => {
    return (
     <Link to={`/item/${item.id}`}>
        <div className='item-container'>
            {item.title}
-           <img style={{width:'80%', height: '60%'}} src= "./assets/straight-jean.jpeg"></img>
-           <p>{item.price}.00 $</p>    
-       </div>
+           <img style={{width:'80%', height: '60%'}} src={`../assets/${item.pictureUrl}`}></img>
+           <p>{item.price}.00 $</p>     
+       </div>   
        </Link>
    ) 
 

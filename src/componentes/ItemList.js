@@ -23,12 +23,16 @@ const ItemList = ({items}) => {
     },2000)
     })
 
-
+    
+   
  
     const itemByCategory = id ? items.filter(item => item.categorie == id) : items;
     const itemsGenerator = itemByCategory.map( (item) =>  <Item key = {item.id} item = {item}></Item>);
 
-    
+    useEffect(()=> {
+      console.log(itemByCategory)
+    }, [])
+
     return  (
       <div className='item-list-container'>
           {itemsGenerator}

@@ -22,7 +22,8 @@ const CartProvider = ({ children }) => {
  
 
    useEffect(() => {
-     getProducts();
+    getProducts()
+    console.log(items)
    }, [])
 
 
@@ -31,13 +32,12 @@ const CartProvider = ({ children }) => {
  
   const getProducts = async () => {
      const querySnapshot = await getDocs(collection(db, 'items'));
-     const itemArray = [];
       const itemList = querySnapshot.docs.map((doc) => {
-       itemArray.push(doc.data())
-      }) 
-      setItems(itemArray);
-      console.log(items)
-
+        let item = doc.data()
+        item.id = doc.id;
+        return item
+      })    
+      setItems([...itemList]);
     }
 
  
@@ -115,6 +115,8 @@ const CartProvider = ({ children }) => {
         addProduct,
         removeItem,
         calculateTotal,
+        setCartListItems,
+        setQuantity,
         totalPrice,
         totalQuantity,
         items

@@ -9,18 +9,23 @@ import ItemDetail from './itemDetails';
 
 const ItemDetailContainer = () => {
     
-    console.log(useParams())
+  
 
 
     const { id } = useParams();
 
     const { items } = useContext(CartContext)
+    
+    const item = items.find(item => item.id === id)
 
+    useEffect(()=> {
+        console.log(item)
+    }, [])
 
 
     return (<div className='App-header'>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', transform: 'translateY(7vh)', padding: '3vh' }}>
-            <ItemDetail item = {items[id-1]}></ItemDetail> 
+          {item && <ItemDetail item = {item}></ItemDetail> }  
         </div>
     </div>
     )

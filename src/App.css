@@ -244,3 +244,52 @@
   box-shadow: none;
   transform: translateY(0);
 }
+
+
+
+
+.submit{
+  border:none;
+  outline:none;
+  display:inline-block;
+  height:34px;
+  vertical-align:middle;
+  position:relative;
+  bottom:14px;
+  right:9px;
+  border-radius:22px;
+  width:220px;
+  box-sizing:border-box;
+  padding:0 18px; 
+  margin:1vh;
+}
+
+
+
+.button{ 
+  background:rgba(197,62,126,.9);
+  color:#fff;
+  position:relative;
+  left:9px;
+  top:5px; 
+  width:100px;
+  cursor:pointer;
+}
+
+
+.submit-container { 
+  width:50vh;
+  height:50vh;
+  background-color:#cdebe7;
+  border-radius:15px;
+  transform:translateY(-5vh);
+  justify-content:center;
+  align-items:center;
+  display:flex;
+  flex-direction:column;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.button:hover{
+  filter:brightness(1.2)
+}

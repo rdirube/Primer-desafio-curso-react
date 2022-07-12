@@ -9,10 +9,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 const CompleteCart = ({ }) => {
 
-    const { cartListItems } = useContext(CartContext)
-    const { removeItem } = useContext(CartContext)
-    const { totalPrice } = useContext(CartContext)
-    const {setCartListItems} = useContext(CartContext)
+    const { cartListItems, removeItem, totalPrice,  setCartListItems, items , setItems} = useContext(CartContext)
 
     const [completeTransaction, setTransaccion] = useState(false)
     const [value, setValue] = useState({
@@ -23,6 +20,19 @@ const CompleteCart = ({ }) => {
 
     const tableHeader = ['Producto', 'Cantidad', 'Precio', 'Por producto', 'Eliminar']
     const tableResult = ['Total', '', '', `${totalPrice}.00`, '']
+    const formularyValues = [{
+        name:'name',
+        value: value.name,
+        placeHolder:'Nombre y apellido'
+    }, {
+        name:'phone',
+        value: value.phone,
+        placeHolder:'Teléfono'
+    }, {
+        name:'eMail',
+        value: value.eMail,
+        placeHolder:'Correo electrónico'
+    }]
 
     function activateTransaction() {
         if (!completeTransaction) {
@@ -37,17 +47,40 @@ const CompleteCart = ({ }) => {
         }
     }
 
+    function cancelTransaction () {
+        setTransaccion(false);
+    }
+
 
     const handleChange = (e) => {
         setValue({ ...value, [e.target.name]: e.target.value })
     }
 
+
+    function updateAvaiableItems()  {
+    console.log(cartListItems)
+     const itemsInTheCart = items.map(item => {
+     const itemIsOnCart = cartListItems.find(it => it.id === item.id);
+        return {
+           ...item, stock: item.stock - (itemIsOnCart !== undefined ? itemIsOnCart.quantity : 0)
+        }    
+     });
+     setItems(itemsInTheCart)
+     
+     
+    //  const itemsModified = items.map(item => {
+    //     return (
+            
+    //     )
+     }
+    
+
     
     const handleSubmit = () => {
         insertDataInDatabase();
+        updateAvaiableItems() 
         desactivateTransaction();
         setCartListItems([]);
-
     }
 
 
@@ -65,6 +98,13 @@ const CompleteCart = ({ }) => {
             )
         })
 
+
+   const formulary = formularyValues.map((val) => {
+    return (
+        <input type="text" name={val.name} value={val.value} onChange={handleChange} className='submit' placeholder={val.placeHolder}></input>
+
+    )
+   })
  
         
     const insertDataInDatabase = async () => {
@@ -111,10 +151,11 @@ const CompleteCart = ({ }) => {
                     {completeTransaction && <div style={{ width: '100%', height: '85vh', backgroundColor: 'rgb(100,100,100,0.7)', justifyContent: 'center', alignItems: 'center', position: 'absolute', top: '0', bottom: '0', display: 'flex' }}>
                         <div className='submit-container'>
                             <h4 style={{ transform: 'translateY(-2vh)' }}>Formulario de contacto</h4>
-                            <input type="text" name="name" value={value.name} onChange={handleChange} className='submit' placeholder='Nombre y Apellido'></input>
-                            <input type="text" name="phone" value={value.phone} onChange={handleChange} className='submit' placeholder='Teléfono'></input>
-                            <input type="text" name="eMail" value={value.eMail} onChange={handleChange} className='submit' placeholder='E-mail'></input>
+                             {formulary}
+                             <div style={{display:'flex', justifyContent: 'center', width:'100%'}}>
                             <input type="button" onClick={() => handleSubmit()} className='submit button' value="Enviar"></input>
+                            <input type="button" onClick={() => cancelTransaction()} className='submit button' value="Cancelar" style={{backgroundColor:'#4ee44e'}}></input>
+                            </div>
                         </div>
                     </div>}
                 </div>

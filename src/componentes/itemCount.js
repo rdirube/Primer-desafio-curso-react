@@ -27,7 +27,7 @@ const ItemCount = ({item}) => {
 
 
     return(
-            <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', width:'70%', borderRadius:'50px', padding:'2vh', fontSize:'3vh', backgroundColor:'white', color:'black', height:'4.5vh'}}>
+            <div className='counter-container'>
                 <p onClick={()=> removeCount()} style={{cursor:'pointer'}}>-</p>
                 <p>{jeanCounter}</p>
                 <p onClick={()=> addCount()}  style={{cursor:'pointer'}}>+</p>

@@ -1,12 +1,13 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import 'react-materialize/lib/Icon';
 import './../App.css';
 import CartContext from './CartContext';
 
 
 const Cart = () => {
-    const { cartListItems } = useContext(CartContext)
-    const { removeItem } = useContext(CartContext)
+    const { cartListItems, removeItem  } = useContext(CartContext)
+
+ 
 
     return (
 

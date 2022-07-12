@@ -7,8 +7,8 @@ import '../App.css';
     <Link to={`/item/${item.id}`}>
        <div className='item-container'>
            {item.title}
-           <img style={{width:'80%', height: '60%'}} src={`../assets/${item.pictureUrl}`}></img>
-           <p>{item.price}.00 $</p>     
+           <img style={{width:'80%', height: '60%'}}  src={`${item.pictureUrl}`}></img>
+           <p style={{fontSize:'3.5vh', fontFamily:'roboto'}}>$ {item.price}.00</p>     
        </div>   
        </Link>
    ) 

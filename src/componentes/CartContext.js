@@ -119,7 +119,8 @@ const CartProvider = ({ children }) => {
         setQuantity,
         totalPrice,
         totalQuantity,
-        items
+        items,
+        setItems
     }
 
 

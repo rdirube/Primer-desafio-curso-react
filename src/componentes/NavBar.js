@@ -56,12 +56,16 @@ const NavBar = () => {
                 <div className='log-el'>
                     Register
                 </div>
-                {showCart && (<Cart></Cart>)}
+                {showCart && (
+              
+                    <Cart>
+                    </Cart>
+                )}
             </div>
             <div onClick={() => showCartToggle()} className='cart-widget'>
                 <i className="material-icons" >add_shopping_cart
                 </i>
-                <span>{totalQuantity}</span>
+                <span style={{transform:'translateY(1.8vh)', fontSize:'2.2vh'}}>{totalQuantity}</span>
             </div>
         </div>
     )

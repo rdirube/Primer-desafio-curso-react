@@ -25,7 +25,7 @@ const ItemDetail = ({item}) => {
 
             </div>
             <div style={{display:'flex', justifyContent:'center', alignItems:'center', flexDirection:'column', transform:'translateY(-3vh)'}}>
-            <p style={{color:'greenyellow', transform:'translateY(2vh)'}}>Disponibles: {item.stock}</p>
+            <p style={{color:item.stock > 0 ? 'greenyellow' : 'red', transform:'translateY(2vh)'}}>Disponibles: {item.stock}</p>
             <ItemCount item={item}></ItemCount>
             <button className='button-9' onClick={()=> addProduct(item)}>Añadir al carrito</button>
             </div>

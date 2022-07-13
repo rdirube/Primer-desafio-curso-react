@@ -66,12 +66,6 @@ const CompleteCart = ({ }) => {
         }    
      });
      setItems(itemsInTheCart)
-     
-     
-    //  const itemsModified = items.map(item => {
-    //     return (
-            
-    //     )
      }
     
 
@@ -153,8 +147,8 @@ const CompleteCart = ({ }) => {
                             <h4 style={{ transform: 'translateY(-2vh)' }}>Formulario de contacto</h4>
                              {formulary}
                              <div style={{display:'flex', justifyContent: 'center', width:'100%'}}>
-                            <input type="button" onClick={() => handleSubmit()} className='submit button' value="Enviar"></input>
-                            <input type="button" onClick={() => cancelTransaction()} className='submit button' value="Cancelar" style={{backgroundColor:'#4ee44e'}}></input>
+                            <input type="button" onClick={() => handleSubmit()} className='submit button' value="Enviar"  style={{backgroundColor:'#4ee44e'}}></input>
+                            <input type="button" onClick={() => cancelTransaction()} className='submit button' value="Cancelar"></input>
                             </div>
                         </div>
                     </div>}

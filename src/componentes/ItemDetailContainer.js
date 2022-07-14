@@ -1,11 +1,9 @@
-import '../estilos/navBar.css';
 import {useParams} from 'react-router-dom'
-import '../App.css';
 import { useEffect, useState } from 'react';
 import { useContext, createContext } from 'react';
 import CartContext from './CartContext';
-import ItemDetail from './itemDetails';
-
+import ItemDetail from './ItemDetails';
+import '../App.css';
 
 const ItemDetailContainer = () => {
     

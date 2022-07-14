@@ -1,0 +1,24 @@
+.cart-father-cont {
+    top: 11vh;
+    position: fixed;
+    z-index: 100;
+    transform: scale(0);
+    right: 3vh;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 5px;
+    animation: cart-appearence 0.2s ease forwards;
+  }
+
+
+.cart-list-container {
+    width: 50vh;
+    height: 11vh;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 2vh;
+    border-bottom: 1px solid rgb(200,200,200)
+    ;
+  }
+  
+  

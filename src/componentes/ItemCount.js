@@ -1,4 +1,4 @@
-import './../App.css';
+import '../estilos/Item.css'
 import React , {useState} from 'react';
 
 

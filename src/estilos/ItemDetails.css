@@ -1,0 +1,46 @@
+.item-detail-container {
+    display: flex;
+    padding: 4vh;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 1px solid white;
+    justify-content: space-evenly;
+    align-items: center
+  }
+  
+  
+  .item-detail-inner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 40%;
+    border: 0;
+    color: white;
+    align-items: center;
+    padding-left: 3vh
+  }
+
+
+  
+  .item-title  {
+    font-size:5vh;
+    text-decoration:underline;
+    transform:translateY(-2vh)
+}
+
+
+.item-price  {
+    margin-top:2vh;
+    text-decoration:underline;
+    font-size:3.5vh;
+    transform:translateY(2.5vh)
+}
+
+
+.item-buy-container {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    transform:translateY(-3vh)
+}

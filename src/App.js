@@ -1,7 +1,7 @@
 import './App.css';
 import NavBar from './componentes/NavBar';
-import ItemListContainer from './componentes/itemListContainer'
-import ItemCount from './componentes/itemCount'
+import ItemListContainer from './componentes/ItemListContainer'
+import ItemCount from './componentes/ItemCount'
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import ItemDetailContainer from './componentes/ItemDetailContainer';
 import { ThemeContext } from '@emotion/react';
@@ -29,10 +29,8 @@ function App() {
       <Route path='/category/:id' element= {<ItemListContainer></ItemListContainer>}></Route>
       <Route path='/item/:id' element= {<ItemDetailContainer></ItemDetailContainer>}></Route>
       <Route path='/cart' element= {<CompleteCart></CompleteCart>}></Route>
-
       </Routes>  
-
-         </BrowserRouter>
+      </BrowserRouter>
        </CartProvider>
     </div>
   );

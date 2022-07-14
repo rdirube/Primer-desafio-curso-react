@@ -1,4 +1,4 @@
-import '../estilos/navBar.css'
+import '../estilos/NavBar.css'
 import React, { useState, useContext, useEffect } from 'react';
 import logo from '../assets/logo-nice.png'
 import Cart from './CartWidget'
@@ -9,8 +9,27 @@ const NavBar = () => {
 
 
     const [showCart, cartStateModify] = useState(false);
-    const { totalQuantity } = useContext(CartContext);
-    const { setQuantity } = useContext(CartContext);
+    const { totalQuantity, setQuantity } = useContext(CartContext);
+    const linkProperties = [{cat:"/category/1", name: 'Pantalones'}, { cat:"/category/2",name:'Remeras'},{
+                           cat:"/category/3", name:'Medias'},{cat:"/Cart", name:"Carrito"}]
+    const logInRegister = ['Log In', 'Register'];
+
+
+    const navBar = linkProperties.map(prop => {
+        return(
+            <div className='navbar-element p'>
+            <Link to={prop.cat} style={{ textDecoration: 'none' }}> {prop.name}</Link>
+        </div>  
+    )
+    }) 
+
+    const logInReg = logInRegister.map(prop => {
+        return (
+            <div className='log-el'>
+            {prop}
+           </div>
+        )
+    })
 
     function showCartToggle() {
         cartStateModify(!showCart)
@@ -27,37 +46,18 @@ const NavBar = () => {
     }, [cartListItems])
 
 
+
     return (
         <div className='navBar'>
             <div className='left-navbar'>
                 <div className='navbar-element'>
                     <Link to="/"><img className='logo' src={logo}></img></Link>
                 </div>
-                <div className='navbar-element p'>
-                    <Link to="/category/1" style={{ textDecoration: 'none' }}> Pantalones</Link>
-                </div>
-                <div className='navbar-element p'>
-
-                    <Link to="/category/2" style={{ textDecoration: 'none' }}>Remeras </Link>
-                </div>
-                <div className='navbar-element p'>
-
-                    <Link to="/category/3" style={{ textDecoration: 'none' }}> Medias</Link>
-                </div>
-                <div className='navbar-element p'>
-
-                    <Link to="/Cart" style={{ textDecoration: 'none' }}>Carrito </Link>
-                </div>
+                {navBar}
             </div>
             <div className='login-register'>
-                <div className='log-el'>
-                    <p>Log In</p>
-                </div>
-                <div className='log-el'>
-                    Register
-                </div>
-                {showCart && (
-              
+                {logInReg}
+             {showCart && (          
                     <Cart>
                     </Cart>
                 )}

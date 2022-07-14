@@ -1,6 +1,6 @@
 import CartContext from './CartContext';
 import { useContext, useState } from 'react';
-import './../App.css';
+import '../estilos/Cart.css'
 import 'react-materialize/lib/Icon';
 import { Link } from 'react-router-dom';
 import { collection, setDoc , doc} from 'firebase/firestore';
@@ -96,7 +96,6 @@ const CompleteCart = ({ }) => {
    const formulary = formularyValues.map((val) => {
     return (
         <input type="text" name={val.name} value={val.value} onChange={handleChange} className='submit' placeholder={val.placeHolder}></input>
-
     )
    })
  
@@ -142,7 +141,7 @@ const CompleteCart = ({ }) => {
                     <div style={{ width: '100%', display: 'flex', justifyContent: "center", marginTop: '2vh' }}>
                         <button className='button-9' onClick={() => activateTransaction()} style={{ width: '39vh' }}>Completar compra</button>
                     </div>
-                    {completeTransaction && <div style={{ width: '100%', height: '85vh', backgroundColor: 'rgb(100,100,100,0.7)', justifyContent: 'center', alignItems: 'center', position: 'absolute', top: '0', bottom: '0', display: 'flex' }}>
+                    {completeTransaction && <div className='formulary-background'>
                         <div className='submit-container'>
                             <h4 style={{ transform: 'translateY(-2vh)' }}>Formulario de contacto</h4>
                              {formulary}
@@ -154,7 +153,7 @@ const CompleteCart = ({ }) => {
                     </div>}
                 </div>
             ) : (
-                <div style={{ height: '60vh', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+                <div className='submit-button-container '>
                     <p style={{ fontSize: '4vh' }}>No hay productos en tu carrito</p>
                     <Link to="/"><button className="button-28" role="button">Volver al home</button></Link>
 

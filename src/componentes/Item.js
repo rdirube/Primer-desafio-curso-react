@@ -1,6 +1,5 @@
 import {Link} from 'react-router-dom'
-import '../App.css';
-
+import '../estilos/Item.css'
 
  const Item = ({item}) => {
    return (

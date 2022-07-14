@@ -2,7 +2,7 @@
 import Item from './Item';
 import { useEffect } from 'react';
 import {useParams} from 'react-router-dom'
-import '../App.css';
+import '../estilos/ItemList.css'
 
 
 

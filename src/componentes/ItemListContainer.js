@@ -1,6 +1,5 @@
-import '../estilos/navBar.css';
 import ItemList from './ItemList';
-import { useContext, createContext } from 'react';
+import { useContext } from 'react';
 import CartContext from './CartContext';
 
 
@@ -8,10 +7,6 @@ const ItemListContainer = () => {
     
 
     const {items} = useContext(CartContext)
-
-
-    
-
 
 
 
